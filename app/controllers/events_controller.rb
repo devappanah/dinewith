@@ -2,6 +2,8 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
+  respond_to :html
+
   def index
     @events = Event.where(availability: true)
     respond_with(@events)
@@ -34,7 +36,7 @@ class EventsController < ApplicationController
 
   def destroy
     authorize! :manage, @event
-    @event.destroy 
+    @event.destroy
     respond_with(@event)
   end
 
@@ -44,7 +46,7 @@ class EventsController < ApplicationController
     end
 
     def event_params
-      params.require(:event).permit(:title, :user_id, :description, :category, :date_time, :address, :guest, :price, :availability)
+      params.require(:event).permit(:title, :description, :category, :date_time, :address, :guest, :price, :availability)
     end
 
 end
