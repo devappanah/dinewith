@@ -23,8 +23,11 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = current_user.events.new(event_params)
+    # Todo handle the nested resource properly for the new action and form
+    @event = Event.new(event_params)
+    @event.user_id = current_user.id
     @event.save
+
     respond_with(@event)
   end
 
@@ -42,7 +45,7 @@ class EventsController < ApplicationController
 
   private
     def set_event
-      @event = Event.friendly.find(params[:id])
+      @event = Event.find(params[:id])
     end
 
     def event_params

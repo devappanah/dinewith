@@ -1,0 +1,12 @@
+<div class="col-md-3">
+  <div class="thumbnail">
+    <%= link_to event_path(event) do %>
+
+    <% end %>
+
+    <div class="caption">
+      <p><strong><%= link_to event.title, event_path(event) %></strong></p>
+      <p>$<%= event.price %></p>
+    </div>
+  </div>
+</div>
