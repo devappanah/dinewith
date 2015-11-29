@@ -23,11 +23,12 @@ class EventsController < ApplicationController
   end
 
   def create
-    # Todo handle the nested resource properly for the new action and form
-    @event = Event.new(event_params)
-    @event.user_id = current_user.id
+    #Todo handle the nested resource properly for the new action and form
+    #@event = Event.new(event_params)
+    #@event.user_id = current_user.id
+    #@event.save
+    @event = current_user.events.new(event_params)
     @event.save
-
     respond_with(@event)
   end
 
