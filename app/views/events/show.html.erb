@@ -1,10 +1,11 @@
 <div class="container">
   <div class="row">
-    <%= @event.title %>
-    <%= @event.date_time %>
-    <%= @event.guest %>
-    <%= @event.price %>
-    <%= @event.description %>
-    
+    <div class="col-md-6">
+      <h3><%= @event.title %></h3>
+      <p><%= @event.date_time %></p>
+      <p>Main Guest: <%= @event.guest %></p>
+      <p>$<%= @event.price %> per seat</p>
+      <p><%= @event.description %></p>
+    </div>
   </div>
 </div>
