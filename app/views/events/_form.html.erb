@@ -5,9 +5,12 @@
     <%= f.input :title, required: true, label: false, placeholder: "Event Title", input_html: {class: "form-control"} %>
     <%= f.input :guest, required: true, label: false, placeholder: "Speaker name", input_html: {class: "form-control"} %>
     <%= f.input :date_time, required: true, label: false, placeholder: "Date & Time", input_html: {class: "form-control"} %>
-    <%= f.input :description, required: true, label: false, placeholder: "Description", input_html: {class: "form-control", rows: 5} %>
+    <%= f.input :category, required: true, label: false, placeholder: "Category", input_html: {class: "form-control"} %>
+    <%= f.input :description, required: true, label: false, placeholder: "Describe the event", input_html: {class: "form-control", rows: 5} %>
+    <%= f.input :address, required: true, label: false, placeholder: "Address Street/Road, City, State, Zipcode, Country", input_html: {class: "form-control", rows: 3} %>
+
     <br>
-    <%= f.input :price, required: true, label: false, placeholder: "Price", input_html: {class: "form-control"} %>
+    <%= f.input :price, required: true, label: false, placeholder: "Price per seat", input_html: {class: "form-control"} %>
 
     <div class="checkbox text-center">
     <p>Availability</p>
