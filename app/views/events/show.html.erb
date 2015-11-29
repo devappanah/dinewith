@@ -6,6 +6,8 @@
       <p>Main Guest: <%= @event.guest %></p>
       <p>$<%= @event.price %> per seat</p>
       <p><%= @event.description %></p>
+      <p><%= @event.address %></p>
+      <p><strong>Organized by:</strong> <%= @event.user.first_name %></p>
     </div>
     <div class="col-md-6">
       <div id="map-canvas" style="width: 430px; height: 430px;">

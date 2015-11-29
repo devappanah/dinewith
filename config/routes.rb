@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :events 
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
   get 'pages/home'
   root "pages#home"
 
